@@ -1,0 +1,70 @@
+import React, { useState } from 'react';
+import DonutChartCard from './DonutChartCard';
+
+function DonutChartCards() {
+	const [profiles, setProfiles] = useState([
+		{
+			title: 'Gender',
+			totalLabel: 'Total Users',
+			data: [
+				{
+					label: 'Female',
+					value: 50
+				},
+				{
+					label: 'Male',
+					value: 35
+				},
+				{
+					label: 'Undefined',
+					value: 15
+				}
+			]
+		},
+		{
+			title: 'Age Range',
+			totalLabel: 'Total Users',
+			data: [
+				{
+					label: 'Below 25',
+					value: 20
+				},
+				{
+					label: 'Between 25 and 40',
+					value: 67
+				},
+				{
+					label: 'Above 40',
+					value: 13
+				}
+			]
+		},
+		{
+			title: 'Country',
+			totalLabel: 'Total Users',
+			data: [
+				{
+					label: 'Costa Rica',
+					value: 22
+				},
+				{
+					label: 'India',
+					value: 37
+				},
+				{
+					label: 'Canada',
+					value: 41
+				}
+			]
+		}
+	]);
+	return (
+		<div>
+			{profiles.map((item) => (
+				<DonutChartCard profile={item}></DonutChartCard>
+			))}
+		</div>
+	);
+}
+
+export default DonutChartCards;

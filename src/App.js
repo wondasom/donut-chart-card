@@ -1,7 +1,12 @@
-import './App.css';
+import React from 'react';
+import Cards from './components/DonutChartCards';
 
 function App() {
-	return <div className='App'>This is Donut Chart Challenge!</div>;
+	return (
+		<div>
+			<Cards></Cards>
+		</div>
+	);
 }
 
 export default App;
