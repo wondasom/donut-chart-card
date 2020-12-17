@@ -1,70 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DonutChartCard from './DonutChartCard';
 
+
 function DonutChartCards() {
-	const [profiles, setProfiles] = useState([
-		{
-			title: 'Gender',
-			totalLabel: 'Total Users',
-			data: [
-				{
-					label: 'Female',
-					value: 50
+	const [error, setError] = useState(null);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [profiles, setProfiles] = useState([]);
+
+	const insert = (arr, index, newItem) => [
+		...arr.slice(0, index),
+		newItem,
+		...arr.slice(index)
+	];
+
+	const handleClone = (profile) => {
+		const index = profiles.indexOf(profile);
+		// (1) if you want to put same cards together
+		const newProfiles = insert(profiles, index + 1, profile);
+		setProfiles(newProfiles);
+		console.log(profiles)
+		// setIsCloned(true);
+		// (2) if you want to put the new card in the end
+		// const newProfiles = [...profiles, profile];
+		// setProfiles(newProfiles);
+		// setIsCloned(true)
+	};
+
+	useEffect(() => {
+		fetch('profiles.json')
+			.then((res) => res.json())
+			.then(
+				(result) => {
+					setIsLoaded(true);
+					setProfiles(result.profiles);
 				},
-				{
-					label: 'Male',
-					value: 35
-				},
-				{
-					label: 'Undefined',
-					value: 15
+				(error) => {
+					setIsLoaded(true);
+					setError(error);
 				}
-			]
-		},
-		{
-			title: 'Age Range',
-			totalLabel: 'Total Users',
-			data: [
-				{
-					label: 'Below 25',
-					value: 20
-				},
-				{
-					label: 'Between 25 and 40',
-					value: 67
-				},
-				{
-					label: 'Above 40',
-					value: 13
-				}
-			]
-		},
-		{
-			title: 'Country',
-			totalLabel: 'Total Users',
-			data: [
-				{
-					label: 'Costa Rica',
-					value: 22
-				},
-				{
-					label: 'India',
-					value: 37
-				},
-				{
-					label: 'Canada',
-					value: 41
-				}
-			]
-		}
-	]);
-	return (
-		<div>
-			{profiles.map((item) => (
-				<DonutChartCard profile={item}></DonutChartCard>
-			))}
-		</div>
-	);
+			);
+	}, []);
+	if (error) {
+		return <div>Error</div>;
+	} else if (!isLoaded) {
+		return <div>Loading...</div>;
+	} else {
+		return (
+			<div>
+				{profiles.map((item) => (
+					<DonutChartCard profile={item} onClone={handleClone}></DonutChartCard>
+				))}
+			</div>
+		);
+	}
 }
 
 export default DonutChartCards;

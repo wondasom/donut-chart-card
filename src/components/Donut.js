@@ -105,11 +105,10 @@ const Bullet = styled.div`
 	max-height: 1rem;
 	border-radius: 100%;
 	margin-right: 0.7rem;
-	${({ props }) => props == 0 && `background-color: ${COLORS.pink}`};
-	${({ props }) => props == 1 && `background-color: ${COLORS.skyBlue}`};
-	${({ props }) => props == 2 && `background-color: ${COLORS.purple}`};
+	${({ props }) => props === 0 && `background-color: ${COLORS.pink}`};
+	${({ props }) => props === 1 && `background-color: ${COLORS.skyBlue}`};
+	${({ props }) => props === 2 && `background-color: ${COLORS.purple}`};
 `;
-
 const Legend = styled.div`
 	width: 30%;
 	display: flex;
