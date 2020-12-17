@@ -27,6 +27,7 @@ About each widget(card),
 - [ ] Improve loading component.
 - [ ] Do better prop handling.
 - [ ] Implement keys using UUID.
+- [ ] Improve performance, minimizing unnecessary rendering.
  
 
 ## ⚙️ Set Up
