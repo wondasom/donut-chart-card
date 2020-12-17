@@ -79,12 +79,18 @@ class Donut extends Component {
 					width='380'
 				/>
 				<Legend>
-					{this.state.labels.map((item) => (
-						<LegendItem>
-							<Bullet props={this.state.labels.indexOf(item)}></Bullet>
-							<Item>{item}</Item>
-						</LegendItem>
-					))}
+					{this.props.chartData
+						.map((item) => item.label)
+						.map((item) => (
+							<LegendItem>
+								<Bullet
+									props={this.props.chartData
+										.map((item) => item.label)
+										.indexOf(item)}
+								></Bullet>
+								<Item>{item}</Item>
+							</LegendItem>
+						))}
 				</Legend>
 			</ChartContainer>
 		);
