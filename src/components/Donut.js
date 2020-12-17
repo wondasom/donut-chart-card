@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Chart from 'react-apexcharts';
 import styled from 'styled-components';
+import { COLORS } from '../assets/colors';
 
 class Donut extends Component {
 	constructor(props) {
@@ -11,6 +12,7 @@ class Donut extends Component {
 			series: this.chartSeries,
 			labels: this.chartLabels,
 			options: {
+				colors: [COLORS.pink, COLORS.skyBlue, COLORS.purple],
 				tooltip: {
 					enabled: false
 				},
@@ -44,7 +46,7 @@ class Donut extends Component {
 									fontSize: '46px',
 									fontFamily: 'Helvetica, Arial, sans-serif',
 									fontWeight: 400,
-									color: 'red',
+									color: COLORS.darkBlue,
 									offsetY: -26,
 									formatter: function(val) {
 										return val;
@@ -57,7 +59,7 @@ class Donut extends Component {
 									fontSize: '18px',
 									fontFamily: 'Helvetica, Arial, sans-serif',
 									fontWeight: 600,
-									color: 'green'
+									color: COLORS.darkBlue
 								}
 							}
 						}
@@ -79,7 +81,7 @@ class Donut extends Component {
 				<Legend>
 					{this.state.labels.map((item) => (
 						<LegendItem>
-							<Bullet></Bullet>
+							<Bullet props={this.state.labels.indexOf(item)}></Bullet>
 							<Item>{item}</Item>
 						</LegendItem>
 					))}
@@ -101,9 +103,11 @@ const Bullet = styled.div`
 	max-width: 1rem;
 	min-height: 1rem;
 	max-height: 1rem;
-	border: 1px solid black;
 	border-radius: 100%;
 	margin-right: 0.7rem;
+	${({ props }) => props == 0 && `background-color: ${COLORS.pink}`};
+	${({ props }) => props == 1 && `background-color: ${COLORS.skyBlue}`};
+	${({ props }) => props == 2 && `background-color: ${COLORS.purple}`};
 `;
 
 const Legend = styled.div`
@@ -116,6 +120,7 @@ const LegendItem = styled.div`
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 0.8rem;
+	color: ${COLORS.darkBlue};
 `;
 
 const Item = styled.span`
