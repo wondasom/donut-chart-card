@@ -104,6 +104,13 @@ const ChartContainer = styled.div`
 	flex-direction: row;
 `;
 
+const Legend = styled.div`
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+`;
+
 const Bullet = styled.div`
 	min-width: 1rem;
 	max-width: 1rem;
@@ -114,11 +121,6 @@ const Bullet = styled.div`
 	${({ props }) => props === 0 && `background-color: ${COLORS.pink}`};
 	${({ props }) => props === 1 && `background-color: ${COLORS.skyBlue}`};
 	${({ props }) => props === 2 && `background-color: ${COLORS.purple}`};
-`;
-const Legend = styled.div`
-	width: 30%;
-	display: flex;
-	flex-direction: column;
 `;
 
 const LegendItem = styled.div`

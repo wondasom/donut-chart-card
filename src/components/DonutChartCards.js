@@ -18,11 +18,9 @@ function DonutChartCards() {
 		// (1) if you want to put same cards together
 		const newProfiles = insert(profiles, index + 1, profile);
 		setProfiles(newProfiles);
-		// setIsCloned(true);
 		// (2) if you want to put the new card in the end
 		// const newProfiles = [...profiles, profile];
 		// setProfiles(newProfiles);
-		// setIsCloned(true)
 	};
 
 	useEffect(() => {
