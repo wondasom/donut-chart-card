@@ -14,7 +14,7 @@ About each widget(card),
 - [x] Each card has a title.
 - [x] Each card has a donut chart with a label of the total number of users in the middle.
 - [x] Each card has a legend of the represented items.
-- [x] Each card has a menu button on the top-right that contains an action item **Clone**.
+- [x] Each card has a menu button on the top-right that contains an action item Clone.
   - [x] When the menu button is clicked, the current card will be duplicated.
   - [x] When the duplication is finished, the menu button of the _original card_ will disappear.
 
