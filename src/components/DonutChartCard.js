@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Donut from './Donut';
 import styled from 'styled-components';
-import { StylesProvider } from '@material-ui/core/styles';
 
 import { Button, Menu, MenuItem } from '@material-ui/core';
+import { StylesProvider } from '@material-ui/core/styles';
+
 import { COLORS } from '../assets/colors';
+import { SIZE } from '../assets/size';
 import menu from '../images/menu.png';
 
 function DonutChartCard(props) {
@@ -26,7 +28,7 @@ function DonutChartCard(props) {
 
 	return (
 		<CardContainer>
-			<TitleContainer>
+			<Header>
 				<Title>{chartTitle}</Title>
 				{!isCloned && (
 					<StylesProvider injectFirst>
@@ -34,9 +36,7 @@ function DonutChartCard(props) {
 							aria-controls='simple-menu'
 							aria-haspopup='true'
 							onClick={handleClick}
-						>
-							⋮
-						</StyledButton>
+						></StyledButton>
 						<Menu
 							id='simple-menu'
 							anchorEl={anchorEl}
@@ -48,7 +48,7 @@ function DonutChartCard(props) {
 						</Menu>
 					</StylesProvider>
 				)}{' '}
-			</TitleContainer>
+			</Header>
 			<Donut chartData={chartData} totalLabel={totalLabel}></Donut>
 		</CardContainer>
 	);
@@ -62,25 +62,29 @@ const CardContainer = styled.div`
 	width: 38rem;
 	padding: 1rem;
 	margin: 1rem;
+	@media (max-width: ${SIZE.mobile}) {
+		width:100%;
+		margin:0;
+	}
 `;
 
 const Title = styled.h2`
 	color: ${COLORS.darkBlue};
 	border-bottom: dashed 2px ${COLORS.lightGrey};
 	padding-bottom: 0.5rem;
-
 `;
 
-const TitleContainer = styled.div`
+const Header = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	padding: 0;
 `;
 
 const StyledButton = styled(Button)`
-	width: 0.5rem;
+	height: 64px;
 	background-image: url(${menu});
 	background-repeat: no-repeat;
 	background-position: center;

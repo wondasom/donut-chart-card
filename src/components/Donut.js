@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Chart from 'react-apexcharts';
 import styled from 'styled-components';
+
 import { COLORS } from '../assets/colors';
+import {SIZE} from "../assets/size"
 
 class Donut extends Component {
 	constructor(props) {
@@ -76,7 +78,7 @@ class Donut extends Component {
 					options={this.state.options}
 					series={this.state.series}
 					type='donut'
-					width='380'
+					width='360'
 				/>
 				<Legend>
 					{this.props.chartData
@@ -102,6 +104,9 @@ export default Donut;
 const ChartContainer = styled.div`
 	display: flex;
 	flex-direction: row;
+	@media (max-width: ${SIZE.medium}) {
+		flex-direction: column;
+	}
 `;
 
 const Legend = styled.div`
@@ -109,6 +114,9 @@ const Legend = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-top: 1rem;
+	@media (max-width: ${SIZE.medium}) {
+		width:100%;
+	}
 `;
 
 const Bullet = styled.div`
