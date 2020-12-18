@@ -39,15 +39,15 @@ class Donut extends Component {
 								show: true,
 								name: {
 									show: true,
-									offsetY: 30 // position of total.label
+									offsetY: 26 // position of total.label
 								},
 								value: {
 									show: true,
-									fontSize: '46px',
-									fontFamily: 'Helvetica, Arial, sans-serif',
-									fontWeight: 400,
+									fontSize: '36px',
+									fontFamily: 'Montserrat, Arial, sans-serif',
+									fontWeight: 600,
 									color: COLORS.darkBlue,
-									offsetY: -26,
+									offsetY: -20,
 									formatter: function(val) {
 										return val;
 									}
@@ -112,6 +112,8 @@ const Legend = styled.div`
 `;
 
 const Bullet = styled.div`
+	position: relative;
+	bottom: -1px;
 	min-width: 1rem;
 	max-width: 1rem;
 	min-height: 1rem;
@@ -128,6 +130,7 @@ const LegendItem = styled.div`
 	flex-direction: row;
 	margin-bottom: 0.8rem;
 	color: ${COLORS.darkBlue};
+	font-weight: 600;
 `;
 
 const Item = styled.span`

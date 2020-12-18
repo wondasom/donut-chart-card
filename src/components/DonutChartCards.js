@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DonutChartCard from './DonutChartCard';
-
+import styled from 'styled-components';
 
 function DonutChartCards() {
 	const [error, setError] = useState(null);
@@ -43,13 +43,20 @@ function DonutChartCards() {
 		return <div>Loading...</div>;
 	} else {
 		return (
-			<div>
+			<Container>
 				{profiles.map((item) => (
 					<DonutChartCard profile={item} onClone={handleClone}></DonutChartCard>
 				))}
-			</div>
+			</Container>
 		);
 	}
 }
 
 export default DonutChartCards;
+
+const Container = styled.div`
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:space-between;
+`;

@@ -59,16 +59,16 @@ export default DonutChartCard;
 const CardContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 40rem;
+	width: 38rem;
 	padding: 1rem;
-	margin-bottom: 1rem;
+	margin: 1rem;
 `;
 
 const Title = styled.h2`
 	color: ${COLORS.darkBlue};
 	border-bottom: dashed 2px ${COLORS.lightGrey};
 	padding-bottom: 0.5rem;
-	display: inline;
+
 `;
 
 const TitleContainer = styled.div`
