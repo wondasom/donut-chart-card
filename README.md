@@ -14,7 +14,7 @@ About each widget(card),
 - [x] Each card has a title.
 - [x] Each card has a donut chart with a label of the total number of users in the middle.
 - [x] Each card has a legend of the represented items.
-- [x] Each card has a menu button on the top-right that contains an action item **Clone**.
+- [x] Each card has a menu button on the top-right that contains an action item Clone.
   - [x] When the menu button is clicked, the current card will be duplicated.
   - [x] When the duplication is finished, the menu button of the _original card_ will disappear.
 
@@ -32,7 +32,7 @@ About each widget(card),
 - [x] Add CSS to an error component.
 - [x] Add CSS to a loading component.
 - [x] Do better prop handling.
-- [x] Implement keys using UUID.
+- [x] Implement keys using Uuid.
 - [x] Improve performance, minimizing unnecessary rendering.
 
 ## ⚙️ Set Up
@@ -57,9 +57,9 @@ to run the application <br>
 
 - Why did AJAX not work when the JSON file was in the `src` folder but did work in the `public` folder?
 - What would be the better way of writing the `handleClone` function (in case you want to insert an element into a specific index of an array)?
-- What are the general rules of **data sorting** for charts/graphs?
-- What is the alternative of making/customizing dashed line _without_ using the background image or `border` in CSS?
+- What are the general rules of data sorting for charts/graphs?
+- What is the alternative of making/customizing dashed line _without_ using the `background-image` or `border` in CSS?
 - How to update the state on prop changes?
-  - Why is `componentWillRecieveProps` UNSAFE?
+  - Why is `componentWillRecieveProps` [UNSAFE to use](https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)?
 - Time to learn [Jest](https://jestjs.io/)!
   
