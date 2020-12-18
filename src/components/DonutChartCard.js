@@ -31,6 +31,11 @@ function DonutChartCard(props) {
 		setIsCloned(true);
 	};
 
+	const handleMenuClick = () => {
+		handleClose();
+		handleClone();
+	};
+
 	return (
 		<CardContainer>
 			<Header>
@@ -49,9 +54,7 @@ function DonutChartCard(props) {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}
 						>
-							<MenuItem onClick={handleClose} onClick={handleClone}>
-								Clone
-							</MenuItem>
+							<MenuItem onClick={handleMenuClick}>Clone</MenuItem>
 						</Menu>
 					</StylesProvider>
 				)}
