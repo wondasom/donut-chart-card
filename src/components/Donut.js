@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import Chart from 'react-apexcharts';
-import styled from 'styled-components';
+import React, { PureComponent, memo } from 'react';
 
+import styled from 'styled-components';
 import { COLORS } from '../assets/colors';
 import { SIZE } from '../assets/size';
 
-class Donut extends Component {
+import Chart from 'react-apexcharts';
+
+class Donut extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
-			series: this.props.chartSeries,
-			labels: this.props.chartLabels,
 			options: {
 				colors: [COLORS.pink, COLORS.skyBlue, COLORS.purple],
 				tooltip: {
@@ -28,10 +27,6 @@ class Donut extends Component {
 				plotOptions: {
 					pie: {
 						expandOnClick: false,
-						dataLabels: {
-							offset: 0,
-							minAngleToShowLabel: 10
-						},
 						donut: {
 							size: '65%',
 							background: 'transparent',
@@ -74,14 +69,14 @@ class Donut extends Component {
 			<ChartContainer>
 				<Chart
 					options={this.state.options}
-					series={this.state.series}
+					series={this.props.chartSeries}
 					type='donut'
 					width='360'
 				/>
 				<Legend>
-					{this.state.labels.map((item) => (
+					{this.props.chartLabels.map((item) => (
 						<LegendItem>
-							<Bullet props={this.state.labels.indexOf(item)}></Bullet>
+							<Bullet props={this.props.chartLabels.indexOf(item)}></Bullet>
 							<Item>{item}</Item>
 						</LegendItem>
 					))}
@@ -91,7 +86,7 @@ class Donut extends Component {
 	}
 }
 
-export default Donut;
+export default memo(Donut);
 
 const ChartContainer = styled.div`
 	display: flex;
@@ -112,12 +107,12 @@ const Legend = styled.div`
 `;
 
 const Bullet = styled.div`
-	position: relative;
-	bottom: -2.3px;
 	width: 1rem;
 	height: 1rem;
 	border-radius: 100%;
 	margin-right: 0.7rem;
+	position: relative;
+	bottom: -2.3px;
 	${({ props }) => props === 0 && `background-color: ${COLORS.pink}`};
 	${({ props }) => props === 1 && `background-color: ${COLORS.skyBlue}`};
 	${({ props }) => props === 2 && `background-color: ${COLORS.purple}`};

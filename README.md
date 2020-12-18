@@ -6,7 +6,8 @@ This is a task to create a DonutChartCard component.
 
 About the list,
 
-- [x] There is a list of donut chart card that shows data provided by a JSON dataset, using AJAX request.
+- [x] There is a list of donut chart card that shows data provided by a JSON object, using AJAX request.
+- [x] All of the cards look the same, but show different data.
 
 About each widget(card),
 
@@ -14,15 +15,15 @@ About each widget(card),
 - [x] Each card has a donut chart with a label of the total number of users in the middle.
 - [x] Each card has a legend of the represented items.
 - [x] Each card has a menu button on the top-right that contains an action item **Clone**.
-  - [x] When the **Clone** button is clicked, the current card will be duplicated.
-  - [x] When the duplication is finished, the **Clone** button of the _original card_ will disappear.
+  - [x] When the menu button is clicked, the current card will be duplicated.
+  - [x] When the duplication is finished, the menu button of the _original card_ will disappear.
 
 ## 👩🏻‍💻 Requirements
 
 - [x] Use React or Vue.
   - React
 - [x] Use UI frameworks/libraries by choice.
-  - Material-UI (for a menu button)
+  - [Material-UI Menu Component](https://material-ui.com/components/menus/) (for a menu button)
 - [x] Use [Apexcharts](https://apexcharts.com/) to create the charts.
 - [ ] _(optional)_ Provide unit test coverage.
 

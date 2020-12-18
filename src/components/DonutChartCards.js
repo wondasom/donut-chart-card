@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import uuid from 'react-uuid';
+import DonutChartCard from './DonutChartCard';
+
 import styled from 'styled-components';
 
-import DonutChartCard from './DonutChartCard';
+import uuid from 'react-uuid';
 
 function DonutChartCards() {
 	const [error, setError] = useState(null);
@@ -76,19 +77,19 @@ const Container = styled.div`
 const Error = styled.div`
 	width: 100%;
 	height: 100vw;
-	text-align: center;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 	font-size: 1rem;
+	text-align: center;
 `;
 
 const Loading = styled.div`
 	width: 100%;
 	height: 100vw;
-	text-align: center;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 	font-size: 1rem;
+	text-align: center;
 `;

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Donut from './Donut';
+import menu from '../images/menu.png';
+
 import styled from 'styled-components';
+import { COLORS } from '../assets/colors';
+import { SIZE } from '../assets/size';
 
 import { Button, Menu, MenuItem } from '@material-ui/core';
 import { StylesProvider } from '@material-ui/core/styles';
-
-import { COLORS } from '../assets/colors';
-import { SIZE } from '../assets/size';
-import menu from '../images/menu.png';
 
 function DonutChartCard(props) {
 	const totalLabel = props.profile.totalLabel;
@@ -27,7 +27,6 @@ function DonutChartCard(props) {
 
 	const handleClone = () => {
 		props.onClone(props.profile);
-		console.log('button clicked');
 		setIsCloned(true);
 	};
 
@@ -68,12 +67,12 @@ function DonutChartCard(props) {
 	);
 }
 
-export default DonutChartCard;
+export default memo(DonutChartCard);
 
 const CardContainer = styled.div`
+	width: 38rem;
 	display: flex;
 	flex-direction: column;
-	width: 38rem;
 	padding: 1rem;
 	margin: 1rem;
 	@media (max-width: ${SIZE.mobile}) {
@@ -83,10 +82,10 @@ const CardContainer = styled.div`
 `;
 
 const Title = styled.h2`
-	color: ${COLORS.darkBlue};
 	border-bottom: dashed 2px ${COLORS.lightGrey};
 	padding-bottom: 0.5rem;
 	margin-bottom: 0.6rem;
+	color: ${COLORS.darkBlue};
 	font-weight: 800;
 `;
 
