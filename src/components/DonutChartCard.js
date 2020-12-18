@@ -63,8 +63,8 @@ const CardContainer = styled.div`
 	padding: 1rem;
 	margin: 1rem;
 	@media (max-width: ${SIZE.mobile}) {
-		width:100%;
-		margin:0;
+		width: 100%;
+		margin: 0;
 	}
 `;
 
@@ -72,6 +72,7 @@ const Title = styled.h2`
 	color: ${COLORS.darkBlue};
 	border-bottom: dashed 2px ${COLORS.lightGrey};
 	padding-bottom: 0.5rem;
+	margin-bottom: 0.6rem;
 `;
 
 const Header = styled.div`
