@@ -87,6 +87,7 @@ const Title = styled.h2`
 	border-bottom: dashed 2px ${COLORS.lightGrey};
 	padding-bottom: 0.5rem;
 	margin-bottom: 0.6rem;
+	font-weight: 800;
 `;
 
 const Header = styled.div`

@@ -44,7 +44,7 @@ class Donut extends Component {
 								value: {
 									show: true,
 									fontSize: '36px',
-									fontFamily: 'Montserrat, Arial, sans-serif',
+									fontFamily: 'Noto Sans, Arial, sans-serif',
 									fontWeight: 600,
 									color: COLORS.darkBlue,
 									offsetY: -20,
@@ -57,8 +57,8 @@ class Donut extends Component {
 									showAlways: true,
 									label: props.totalLabel.toUpperCase(),
 									fontSize: '18px',
-									fontFamily: 'Helvetica, Arial, sans-serif',
-									fontWeight: 600,
+									fontFamily: 'Nunito, Arial, sans-serif',
+									fontWeight: 800,
 									color: COLORS.darkBlue
 								}
 							}
@@ -79,16 +79,12 @@ class Donut extends Component {
 					width='360'
 				/>
 				<Legend>
-					{this.state.labels
-						.map((item) => (
-							<LegendItem>
-								<Bullet
-									props={this.state.labels
-										.indexOf(item)}
-								></Bullet>
-								<Item>{item}</Item>
-							</LegendItem>
-						))}
+					{this.state.labels.map((item) => (
+						<LegendItem>
+							<Bullet props={this.state.labels.indexOf(item)}></Bullet>
+							<Item>{item}</Item>
+						</LegendItem>
+					))}
 				</Legend>
 			</ChartContainer>
 		);
@@ -117,11 +113,9 @@ const Legend = styled.div`
 
 const Bullet = styled.div`
 	position: relative;
-	bottom: -1px;
-	min-width: 1rem;
-	max-width: 1rem;
-	min-height: 1rem;
-	max-height: 1rem;
+	bottom: -2.3px;
+	width: 1rem;
+	height: 1rem;
 	border-radius: 100%;
 	margin-right: 0.7rem;
 	${({ props }) => props === 0 && `background-color: ${COLORS.pink}`};
@@ -134,7 +128,8 @@ const LegendItem = styled.div`
 	flex-direction: row;
 	margin-bottom: 0.8rem;
 	color: ${COLORS.darkBlue};
-	font-weight: 600;
+	font-weight: 800;
+	letter-spacing: 0.9;
 `;
 
 const Item = styled.span`
