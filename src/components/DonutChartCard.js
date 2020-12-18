@@ -10,9 +10,10 @@ import { SIZE } from '../assets/size';
 import menu from '../images/menu.png';
 
 function DonutChartCard(props) {
-	const chartData = props.profile.data;
 	const totalLabel = props.profile.totalLabel;
 	const chartTitle = props.profile.title;
+	const chartLabels = props.profile.data.map((item) => item.label);
+	const chartSeries = props.profile.data.map((item) => item.value);
 	const [anchorEl, setAnchorEl] = useState(null);
 	const [isCloned, setIsCloned] = useState(false);
 
@@ -22,7 +23,11 @@ function DonutChartCard(props) {
 
 	const handleClose = () => {
 		setAnchorEl(null);
+	};
+
+	const handleClone = () => {
 		props.onClone(props.profile);
+		console.log('button clicked');
 		setIsCloned(true);
 	};
 
@@ -44,12 +49,18 @@ function DonutChartCard(props) {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}
 						>
-							<MenuItem onClick={handleClose}>Clone</MenuItem>
+							<MenuItem onClick={handleClose} onClick={handleClone}>
+								Clone
+							</MenuItem>
 						</Menu>
 					</StylesProvider>
-				)}{' '}
+				)}
 			</Header>
-			<Donut chartData={chartData} totalLabel={totalLabel}></Donut>
+			<Donut
+				totalLabel={totalLabel}
+				chartLabels={chartLabels}
+				chartSeries={chartSeries}
+			></Donut>
 		</CardContainer>
 	);
 }

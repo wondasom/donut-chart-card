@@ -3,16 +3,14 @@ import Chart from 'react-apexcharts';
 import styled from 'styled-components';
 
 import { COLORS } from '../assets/colors';
-import {SIZE} from "../assets/size"
+import { SIZE } from '../assets/size';
 
 class Donut extends Component {
 	constructor(props) {
 		super(props);
-		this.chartLabels = this.props.chartData.map((item) => item.label);
-		this.chartSeries = this.props.chartData.map((item) => item.value);
 		this.state = {
-			series: this.chartSeries,
-			labels: this.chartLabels,
+			series: this.props.chartSeries,
+			labels: this.props.chartLabels,
 			options: {
 				colors: [COLORS.pink, COLORS.skyBlue, COLORS.purple],
 				tooltip: {
@@ -81,13 +79,11 @@ class Donut extends Component {
 					width='360'
 				/>
 				<Legend>
-					{this.props.chartData
-						.map((item) => item.label)
+					{this.state.labels
 						.map((item) => (
 							<LegendItem>
 								<Bullet
-									props={this.props.chartData
-										.map((item) => item.label)
+									props={this.state.labels
 										.indexOf(item)}
 								></Bullet>
 								<Item>{item}</Item>
@@ -115,7 +111,7 @@ const Legend = styled.div`
 	flex-direction: column;
 	margin-top: 1rem;
 	@media (max-width: ${SIZE.medium}) {
-		width:100%;
+		width: 100%;
 	}
 `;
 
