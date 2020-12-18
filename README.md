@@ -29,11 +29,11 @@ About each widget(card),
 
 ## ✨ Further Tasks
 
-- [x] Improve error component.
-- [x] Improve loading component.
-- [x] Do better prop handling. (by moving mapping to parents components)
+- [x] Add CSS to an error component.
+- [x] Add CSS to a loading component.
+- [x] Do better prop handling.
 - [x] Implement keys using UUID.
-- [ ] Improve performance, minimizing unnecessary rendering.
+- [x] Improve performance, minimizing unnecessary rendering.
 
 ## ⚙️ Set Up
 
@@ -57,7 +57,9 @@ to run the application <br>
 
 - Why did AJAX not work when the JSON file was in the `src` folder but did work in the `public` folder?
 - What would be the better way of writing the `handleClone` function (in case you want to insert an element into a specific index of an array)?
-- What is the best way of making dashed line _without_ using the background image?
-- Time to learn **Jest**!
+- What are the general rules of **data sorting** for charts/graphs?
+- What is the alternative of making/customizing dashed line _without_ using the background image or `border` in CSS?
 - How to update the state on prop changes?
   - Why is `componentWillRecieveProps` UNSAFE?
+- Time to learn [Jest](https://jestjs.io/)!
+  
