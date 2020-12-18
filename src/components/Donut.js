@@ -110,7 +110,7 @@ const ChartContainer = styled.div`
 `;
 
 const Legend = styled.div`
-	width: 30%;
+	width: 35%;
 	display: flex;
 	flex-direction: column;
 	margin-top: 1rem;
