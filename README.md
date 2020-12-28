@@ -53,7 +53,7 @@ to run the application <br>
   - by implementing similar layout.
 - I was tempted to work with Vue.js but with the time constraint, I chose React.js which I feel more comfortable to work with.
 
-## 💯 Areas for Improvements & Questions
+## [💯 Areas for Improvements & Questions](https://wondasom93.medium.com/my-first-react-code-challenge-and-more-d59a9677f18a)
 
 - Why did AJAX not work when the JSON file was in the `src` folder but did work in the `public` folder?
 - What would be the better way of writing the `handleClone` function (in case you want to insert an element into a specific index of an array)?
