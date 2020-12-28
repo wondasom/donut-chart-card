@@ -52,6 +52,7 @@ to run the application <br>
   - by using similar typography([Nunito](https://fonts.google.com/specimen/Nunito?preview.text=12187&preview.text_type=custom&selection.family=Noto+Sans:wght@700|Nunito:wght@300;400;600;700;800&sidebar.open=true&query=nunito), [Noto-Sans](https://fonts.google.com/specimen/Noto+Sans?preview.text=12187&preview.text_type=custom&selection.family=Noto+Sans:wght@700|Nunito:wght@300;400;600;700;800&sidebar.open=true)).
   - by implementing similar layout.
 - I was tempted to work with Vue.js but with the time constraint, I chose React.js which I feel more comfortable to work with.
+- I used Styled Components because I can still use plain CSS syntax without having to worry about your selector names existing in a global scope with cascading overrides, and add extra JavaScript code when dynamic styling is needed.    
 
 ## 💯 Areas for Improvements & Questions
 
