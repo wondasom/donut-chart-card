@@ -48,7 +48,7 @@ to run the application <br>
 ## 🎨 Design Decisions & Framework Choices
 
 - The main goal in terms of design was to make it look identical as possible with the given example,
-  - by making/using the same color palette(![#c4366f](https://via.placeholder.com/15/c4366f/000000?text=+) `#c4366f`, ![#85adff](https://via.placeholder.com/15/85adff/000000?text=+) `#85adff`, ![#502579](https://via.placeholder.com/15/502579/000000?text=+) `#502579`).
+  - by making/using the same color palette( `#c4366f`, `#85adff`, `#502579`).
   - by using similar typography([Nunito](https://fonts.google.com/specimen/Nunito?preview.text=12187&preview.text_type=custom&selection.family=Noto+Sans:wght@700|Nunito:wght@300;400;600;700;800&sidebar.open=true&query=nunito), [Noto-Sans](https://fonts.google.com/specimen/Noto+Sans?preview.text=12187&preview.text_type=custom&selection.family=Noto+Sans:wght@700|Nunito:wght@300;400;600;700;800&sidebar.open=true)).
   - by implementing similar layout.
 - I was tempted to work with Vue.js but with the time constraint, I chose React.js which I feel more comfortable to work with.
