@@ -59,7 +59,7 @@ to run the application <br>
 - Why did AJAX not work when the JSON file was in the `src` folder but did work in the `public` folder?
 - What would be the better way of writing the `handleClone` function (in case you want to insert an element into a specific index of an array)?
 - What are the valuable tips and guidelines for data visualization?
-- What is the alternative of making/customizing dashed line _without_ using the `background-image` or `border` in CSS?
+- What is the best practice to create a dashed line in CSS?
 - How to update the state on prop changes?
   - Why is `componentWillRecieveProps` [UNSAFE to use](https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)?
 - Time to learn [Jest](https://jestjs.io/)!
