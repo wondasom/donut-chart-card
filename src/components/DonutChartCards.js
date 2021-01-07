@@ -9,6 +9,7 @@ function DonutChartCards() {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [profiles, setProfiles] = useState([]);
+	const [insertAfter, setInsertAfter] = useState(false);
 
 	const insert = (arr, index, newItem) => [
 		...arr.slice(0, index),
@@ -17,15 +18,12 @@ function DonutChartCards() {
 	];
 
 	const handleClone = (profile) => {
-		// (1) if you want to put the new card next to the original card so that they are put together
 		const index = profiles.indexOf(profile);
 		const newProfile = { ...profile };
-		const newProfiles = insert(profiles, index + 1, newProfile);
+		const newProfiles = insertAfter
+			? insert(profiles, index + 1, newProfile)
+			: [...profiles, newProfile];
 		setProfiles(newProfiles);
-		// (2) if you want to put the new card in the end
-		// const newProfile = {...profile}
-		// const newProfiles = [...profiles, newProfile];
-		// setProfiles(newProfiles);
 	};
 
 	useEffect(() => {
@@ -36,33 +34,32 @@ function DonutChartCards() {
 					result.profiles.forEach((item) => {
 						item.id = uuid();
 					});
-					setIsLoaded(true);
 					setProfiles(result.profiles);
 				},
 				(error) => {
-					setIsLoaded(true);
 					setError(error);
 				}
-			);
+			)
+			.finally(() => setIsLoaded(true));
 	}, []);
 
-	if (error) {
-		return <Error>🤔 Something went wrong!</Error>;
-	} else if (!isLoaded) {
-		return <Loading>Loading...</Loading>;
-	} else {
+	if (isLoaded) {
+		if (error) {
+			return <Error>🤔 Something went wrong!</Error>;
+		}
 		return (
 			<Container>
-				{profiles.map((item) => (
+				{profiles.map((item, index) => (
 					<DonutChartCard
 						profile={item}
 						onClone={handleClone}
-						key={item.id}
+						key={`${item.id}-${index}`}
 					></DonutChartCard>
 				))}
 			</Container>
 		);
 	}
+	return <Loading>Loading...</Loading>;
 }
 
 export default DonutChartCards;
@@ -86,7 +83,7 @@ const Error = styled.div`
 
 const Loading = styled.div`
 	width: 100%;
-	height: 100vw;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
